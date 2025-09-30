@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  envoy-vrp:
+    image: envoyproxy/envoy-google-vrp-dev:latest
+
+    container_name: envoy-google-vrp
+
+    ports:
+      - "10000:10000"
+
+    environment:
+      - ENVOY_EDGE_EXTRA_ARGS=""
+      - ENVOY_ORIGIN_EXTRA_ARGS=""
+
+    mem_limit: 3g
+
+    restart: unless-stopped

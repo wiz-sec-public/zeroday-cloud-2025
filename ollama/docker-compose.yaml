@@ -1,0 +1,9 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: zerodaycloud-ollama
+  
+    ports:
+      - "11434:11434"
+
+    restart: unless-stopped

@@ -1,0 +1,25 @@
+services:
+  gitlab:
+    image: 'gitlab/gitlab-ce:latest'
+    container_name: gitlab
+    restart: always
+    environment:
+      GITLAB_POST_RECONFIGURE_SCRIPT: /etc/gitlab/post-reconfigure.sh
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://gitlab.zeroday.cloud'
+        gitlab_rails['initial_root_password'] = 'zerodaycloud1!'
+    ports:
+      - '80:80'
+      - '443:443'
+      - '2222:22'
+    volumes:
+      - ./post-reconfigure.sh:/etc/gitlab/post-reconfigure.sh:ro
+      - gitlab_config:/etc/gitlab
+      - gitlab_logs:/var/log/gitlab
+      - gitlab_data:/var/opt/gitlab
+    shm_size: '256m'
+
+volumes:
+  gitlab_config:
+  gitlab_logs:
+  gitlab_data:

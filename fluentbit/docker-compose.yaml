@@ -1,0 +1,13 @@
+services:
+  fluentbit:
+    image: fluent/fluent-bit:latest
+    container_name: zerodaycloud-fluentbit
+
+    volumes:
+      - ./fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf
+  
+    ports:
+      - "9880:9880"   # HTTP input
+      - "2020:2020"   # Monitoring endpoint
+
+    restart: unless-stopped

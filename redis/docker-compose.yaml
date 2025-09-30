@@ -1,0 +1,11 @@
+services:
+  redis:
+    image: redis:latest
+    container_name: zerodaycloud-redis
+
+    command: redis-server --requirepass zerodaycloud1!
+
+    ports:
+      - "6379:6379"
+
+    restart: unless-stopped

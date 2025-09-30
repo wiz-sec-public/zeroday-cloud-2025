@@ -1,0 +1,13 @@
+services:
+  caddy:
+    image: caddy:latest
+    container_name: zerodaycloud-caddy
+  
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+  
+    ports:
+      - "8080:80"
+      - "8443:443"
+
+    restart: unless-stopped

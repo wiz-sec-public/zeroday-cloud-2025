@@ -1,0 +1,12 @@
+services:
+  tomcat:
+    image: tomcat:latest
+    container_name: tomcat_server
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    volumes:
+      - ./server.xml:/usr/local/tomcat/conf/server.xml
+      - ./entrypoint.sh:/entrypoint.sh
+    entrypoint: ["/bin/sh", "/entrypoint.sh"]
+    restart: unless-stopped

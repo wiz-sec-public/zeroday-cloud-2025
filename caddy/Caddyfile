@@ -1,0 +1,13 @@
+{
+    local_certs
+    admin localhost:2019
+    servers {
+        protocols h1 h2 h3
+    }
+}
+
+https:// {
+    tls internal {
+        on_demand
+    }
+}

@@ -1,0 +1,25 @@
+services:
+  vllm:
+    image: vllm/vllm-openai:latest
+    container_name: zerodaycloud-vllm
+    
+    ports:
+      - "8000:8000"
+    
+    environment:
+      - HUGGING_FACE_HUB_TOKEN=${HUGGING_FACE_HUB_TOKEN:-}
+
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+    command: >
+      --model ${MODEL:-facebook/opt-125m}
+      --host 0.0.0.0
+      --port 8000
+    
+    restart: unless-stopped

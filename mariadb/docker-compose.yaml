@@ -1,0 +1,16 @@
+services:
+  mariadb:
+    image: mariadb:latest
+    container_name: zerodaycloud-mariadb
+    environment:
+      - MARIADB_ROOT_PASSWORD=zerodaycloud1!
+      - MARIADB_USER=demo
+      - MARIADB_PASSWORD=zerodaycloud1!
+      - MARIADB_DATABASE=demo
+
+    ports:
+      - "3306:3306"
+
+    command: --local-infile=0
+
+    restart: unless-stopped

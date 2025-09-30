@@ -1,0 +1,18 @@
+services:
+  postgresql:
+    image: postgres:latest
+    container_name: zerodaycloud-postgresql
+
+    volumes:
+      - ./init-user-db.sh:/docker-entrypoint-initdb.d/init-user-db.sh
+
+    environment:
+      - POSTGRES_PASSWORD=zerodaycloud1!
+      - POSTGRES_DEMO_DB=demo
+      - POSTGRES_DEMO_USER=demo
+      - POSTGRES_DEMO_PASSWORD=zerodaycloud1!
+      
+    ports:
+      - "5432:5432"
+
+    restart: unless-stopped
