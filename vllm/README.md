@@ -2,7 +2,7 @@
 
 This document provides the official target information and testing environment for the vllm target, part of the zeroday.cloud 2025 live hacking competition.
 
----
+-----
 
 ## Objective
 
@@ -10,7 +10,7 @@ The condition for scoring on this target is to achieve **Remote Code Execution (
 
 To prove Remote Code Execution, the exploit must execute the command `/flag.sh vllm` on the target system.
 
----
+-----
 
 ## Local Testing Environment
 
@@ -22,11 +22,20 @@ To build and launch the local target environment, execute the following command 
 docker compose up
 ```
 
-
 ### GPU Requirements
 
 This service requires NVIDIA GPU support.
 
----
+### Note on Models
+
+The provided Docker Compose file uses the lightweight `facebook/opt-125m` model as a default for the testing environment. **You are free to use a different model for your exploit.**
+
+The only conditions are:
+
+1.  The model must be publicly available from a reputable source (e.g., Hugging Face).
+2.  The vulnerability must be in the `vLLM` codebase itself, not a backdoor within the model.
+3.  You must specify which model your exploit uses in your final submission so we can have it ready for the live demonstration.
+
+-----
 
 For all inquiries and clarifications, please contact us at zerodaycloud@wiz.io
