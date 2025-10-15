@@ -12,7 +12,7 @@ To prove successful container escape and host compromise, the exploit must demon
 - **Remote Code Execution (RCE)**: Execute the command `/flag.sh nct` on the host system
 - **File Access**: Read the file `/flag` from the host system
 
-**Note:** Kernel exploits are not eligible for this target.
+**Note:** Linux Kernel exploits are not eligible for this target. Vulnerabilities in the NVIDIA drivers bundled with the Container Toolkit are in scope.
 
 There are two exploitation scenarios:
 
