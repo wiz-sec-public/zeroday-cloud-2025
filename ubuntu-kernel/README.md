@@ -37,4 +37,20 @@ For the best chance of success during the live demonstration, we recommend testi
 
 ---
 
+### Target Configuration Options
+
+You have flexibility in choosing the target environment for your exploit:
+
+- **Architecture**: You can choose either x86_64 or ARM architecture
+- **Vendor**: For x86_64, you can choose between AMD or Intel processors
+- **Ubuntu Version**: You can choose any Ubuntu version that is within its "Standard Security Maintenance" period
+
+To see currently supported Ubuntu versions, refer to the [Ubuntu release cycle page](https://ubuntu.com/about/release-cycle). As of October 2025, the following versions are in Standard Security Maintenance:
+- Ubuntu 25.10 (Questing Quokka) - until July 2026
+- Ubuntu 25.04 (Plucky Puffin) - until January 2026
+- Ubuntu 24.04 LTS (Noble Numbat) - until April 2029
+- Ubuntu 22.04 LTS (Jammy Jellyfish) - until April 2027
+
+---
+
 For all inquiries and clarifications, please contact us at zerodaycloud@wiz.io
