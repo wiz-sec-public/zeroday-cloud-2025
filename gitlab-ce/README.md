@@ -10,7 +10,12 @@ The condition for scoring on this target is to achieve **Remote Code Execution (
 
 To prove Remote Code Execution, the exploit must execute the command `/flag.sh gitlab` on the target system.
 
-### Unauthenticated Scenario  
+There are two exploitation scenarios:
+
+### Authenticated Scenario
+In this scenario, valid credentials for a low-privileged user will be provided to contestants. You may use these credentials to authenticate with the GitLab-CE instance before attempting your exploit. The user has standard developer permissions and can create repositories.
+
+### Unauthenticated Scenario
 In this scenario, no credentials will be provided. Your exploit must work without any prior authentication to the GitLab-CE instance.
 
 ---
@@ -24,6 +29,14 @@ To build and launch the local target environment, execute the following command 
 ```bash
 docker compose up
 ```
+
+For testing purposes, you can use the following credentials to access the GitLab-CE instance:
+- **Root User:**
+  - Username: `root`
+  - Password: `zerodaycloud1!`
+- **Developer User (Low-privileged):**
+  - Username: `developer`
+  - Password: `zerodaycloud1!`
 
 The GitLab-CE service will be accessible at `http://localhost:80`
 
