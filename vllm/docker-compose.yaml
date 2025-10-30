@@ -8,14 +8,7 @@ services:
     
     environment:
       - HUGGING_FACE_HUB_TOKEN=${HUGGING_FACE_HUB_TOKEN:-}
-
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
+      - VLLM_TARGET_DEVICE=cpu
 
     command: >
       --model ${MODEL:-facebook/opt-125m}
