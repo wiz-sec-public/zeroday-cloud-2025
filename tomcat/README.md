@@ -8,7 +8,7 @@ This document provides the official target information and testing environment f
 
 The condition for scoring on this target is to achieve **Remote Code Execution (RCE)**. The exploit must be triggered remotely by attacking the services exposed on ports **8080 (HTTP)** and **8443 (HTTPS)**.
 
-To prove Remote Code Execution, the exploit must execute the command `/flag.sh tomact` on the target system.
+To prove Remote Code Execution, the exploit must execute the command `/flag.sh tomcat` on the target system.
 
 ---
 
@@ -28,3 +28,4 @@ docker compose up
 
 
 For all inquiries and clarifications, please contact us at zerodaycloud@wiz.io
+
